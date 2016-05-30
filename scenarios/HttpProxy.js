@@ -69,6 +69,7 @@ HttpProxy.prototype = {
 			bodyObject:SafeJSONParse(body),
 			headers : headers,
 			body:body,
+			agent_name : this.name,
 			requestId : requestId
 		});
 	},
@@ -84,6 +85,7 @@ HttpProxy.prototype = {
 			bodyObject:SafeJSONParse(body),
 			headers : headers,
 			body:body,
+			agent_name : this.name,
 			requestId : requestId
 		});
 	},

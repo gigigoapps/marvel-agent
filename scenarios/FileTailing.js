@@ -39,7 +39,7 @@ FileTailing.prototype = {
 	},
 	onLine : function(line){
 		this.notifyLog({
-			name : this.opts.name,
+			agent_name : this.opts.name,
 			path : this.opts.path,
 			lineObject : this.parseLine(line),
 			line : line

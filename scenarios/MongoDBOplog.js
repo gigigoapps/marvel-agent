@@ -92,6 +92,7 @@ MongoDBOplog.prototype = {
 	op : function(doc){
 		if (this.nsRegex.test(doc.ns) && this.opRegex.test(doc.op)){
 			var body = {
+				agent_name : this.name,
 				op : this.opNames[doc.op],
 				ts : Date(doc.ts.high_),
 				col : doc.ns,
