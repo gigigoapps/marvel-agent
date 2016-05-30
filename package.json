@@ -13,6 +13,10 @@
   },
   "author": "Eduardo Hidalgo",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gigigoapps/marvel-agent.git"
+  },
   "dependencies": {
     "chalk": "^1.1.3",
     "cors": "^2.7.1",
