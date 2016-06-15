@@ -51,11 +51,11 @@ var loggerInterface = require('./lib/loggerInterface')
 var app = express()
 var server = require('http').Server(app)
 
-//Enable CORS
-app.use(cors())
-
 //Load scenarios 
 scenarioLoader(app)
+
+//Enable CORS
+app.use(cors())
 
 //Init logger
 loggerInterface(server)
