@@ -1,6 +1,6 @@
 {
   "name": "marvel-agent",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Source agent for Marvel Eye",
   "main": "index.js",
   "scripts": {
