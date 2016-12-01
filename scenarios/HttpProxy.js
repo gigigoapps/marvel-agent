@@ -130,19 +130,20 @@ HttpProxy.prototype = {
 		req.headers.host = this.hostname;
 
 		//Capture body
-		req.body = '';
-		req.on('data', function (data) {
-	        req.body += data;
+		req.body = [];
+		req.on('data', function (chunk) {
+	        req.body.push(chunk)
 	    });
 
 	    //Pass to proxy
 	    req.on('end',function(){ 
+            req.body = Buffer.concat(req.body);
 
 			//Notify request
 			if (self.debug.enabled){
 				// self.debug('request',req.requestId,req.fullUrl);
 			}
-			self.notifiyRequest(req.requestId,req.method,req.fullUrl,req.headers,req.body);
+			self.notifiyRequest(req.requestId,req.method,req.fullUrl,req.headers,req.body.toString());
 
 			//Remove previous body listeners
 			req.removeAllListeners('data');
