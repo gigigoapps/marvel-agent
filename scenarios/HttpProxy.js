@@ -3,7 +3,7 @@
 var proxy = require('http-proxy');
 var assert = require('assert');
 var shortid = require('shortid');
-var form2json = require('form2json');
+var qs = require('qs');
 
 function SafeJSONParse(str){
 	var obj = null;
@@ -14,7 +14,7 @@ function SafeJSONParse(str){
 }
 function getParamsObject(str){
 	var q = str.split('?')[1];
-	return !q ? '' : form2json.decode(q);
+	return !q ? '' : qs.parse(q);
 }
 
 function HttpProxy(opts,notify,app){
